@@ -1,3 +1,15 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [BasePage.cs](./CS/App_Code/BasePage.cs) (VB: [BasePage.vb](./VB/App_Code/BasePage.vb))
+* [Operation.cs](./CS/App_Code/Operation.cs) (VB: [Operation.vb](./VB/App_Code/Operation.vb))
+* [Default.aspx](./CS/Default.aspx) (VB: [Default.aspx](./VB/Default.aspx))
+* [Default.aspx.cs](./CS/Default.aspx.cs) (VB: [Default.aspx](./VB/Default.aspx))
+* [jQuery.aspx](./CS/jQuery.aspx) (VB: [jQuery.aspx.vb](./VB/jQuery.aspx.vb))
+* [jQuery.aspx.cs](./CS/jQuery.aspx.cs) (VB: [jQuery.aspx.vb](./VB/jQuery.aspx.vb))
+* [ScriptManager.aspx](./CS/ScriptManager.aspx) (VB: [ScriptManager.aspx.vb](./VB/ScriptManager.aspx.vb))
+* [ScriptManager.aspx.cs](./CS/ScriptManager.aspx.cs) (VB: [ScriptManager.aspx.vb](./VB/ScriptManager.aspx.vb))
+<!-- default file list end -->
 # How to track progress of server side processing on the client side (using WebMethods)
 
 
