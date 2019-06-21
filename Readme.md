@@ -11,6 +11,9 @@
 * [ScriptManager.aspx.cs](./CS/ScriptManager.aspx.cs) (VB: [ScriptManager.aspx.vb](./VB/ScriptManager.aspx.vb))
 <!-- default file list end -->
 # How to track progress of server side processing on the client side (using WebMethods)
+<!-- run online -->
+**[[Run Online]](https://codecentral.devexpress.com/t156786/)**
+<!-- run online end -->
 
 
 <p>This example demonstrates one of many possible scenarios when a client should be notified of the progress of a server process. Web methods allow you to make a request from the client and return information that can be restored and used to display a current progress, without refreshing the whole page. <br><br>The sample demonstrates how to use web methods in two ways
