@@ -1,36 +1,23 @@
-<!-- default badges list -->
-![](https://img.shields.io/endpoint?url=https://codecentral.devexpress.com/api/v1/VersionRange/128565372/14.1.7%2B)
-[![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T156786)
-[![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
-<!-- default badges end -->
-<!-- default file list -->
-*Files to look at*:
-
-* [BasePage.cs](./CS/App_Code/BasePage.cs) (VB: [BasePage.vb](./VB/App_Code/BasePage.vb))
-* [Operation.cs](./CS/App_Code/Operation.cs) (VB: [Operation.vb](./VB/App_Code/Operation.vb))
-* [Default.aspx](./CS/Default.aspx) (VB: [Default.aspx](./VB/Default.aspx))
-* [Default.aspx.cs](./CS/Default.aspx.cs) (VB: [Default.aspx.vb](./VB/Default.aspx.vb))
-* [jQuery.aspx](./CS/jQuery.aspx) (VB: [jQuery.aspx](./VB/jQuery.aspx))
-* [jQuery.aspx.cs](./CS/jQuery.aspx.cs) (VB: [jQuery.aspx.vb](./VB/jQuery.aspx.vb))
-* [ScriptManager.aspx](./CS/ScriptManager.aspx) (VB: [ScriptManager.aspx](./VB/ScriptManager.aspx))
-* [ScriptManager.aspx.cs](./CS/ScriptManager.aspx.cs) (VB: [ScriptManager.aspx.vb](./VB/ScriptManager.aspx.vb))
-<!-- default file list end -->
-# How to track progress of server side processing on the client side (using WebMethods)
+# Progress Bar for ASP.NET Web Forms - How to use the WebMethod attribute to display the progress of a server-side process on the client
 <!-- run online -->
 **[[Run Online]](https://codecentral.devexpress.com/t156786/)**
 <!-- run online end -->
 
+This example demonstrates how to use the [WebMethod](https://learn.microsoft.com/en-us/previous-versions/visualstudio/visual-studio-2008/byxd99hx(v=vs.90)?redirectedfrom=MSDN) attribute to get information about the current progress from the server and display in on the client without refreshing the whole page. To enable this functionality, use the *jQuery library* or *ScriptManager* pager.
 
-<p>This example demonstrates one of many possible scenarios when a client should be notified of the progress of a server process. Web methods allow you to make a request from the client and return information that can be restored and used to display a current progress, without refreshing the whole page. <br><br>The sample demonstrates how to use web methods in two ways
+![Use WebMethods to display the server-side process](WebMethodToTrackProgress.png)
 
-* Using the jQuery library (the jQuery.aspx page);
-* Using ScriptManager (the ScriptManager.aspx page);<br><br>Note that web methods <strong>should have the [WebMethod] attribute</strong> (WebMethod(EnableSession = true) if you use the session). They are defined in the BasePage class that is used by both the jQuery and ScriptManager pages.</p>
-<p><br>To call a web method using jQuery, perform a POST request to the method:</p>
+## Overview
 
+Add the WebMethods attribute to the **BasePage** class as follows:
+
+```cs
+[WebMethod(EnableSession = true)]
+```
+
+For the jQuery approach, sent a `POST` request to the WebMethod:
 
 ```js
-WebMethodRequest("jQuery.aspx/StartOperation");
-...
 function WebMethodRequest(url, callback) {
     $.ajax({
         url: url,
@@ -41,20 +28,32 @@ function WebMethodRequest(url, callback) {
 }
 ```
 
-
-<p>In case you use ScriptManager, the syntax would be as follows:</p>
-
+For the ScriptManager approach, call the `StartOperation` method:
 
 ```js
-PageMethods.StartOperation();
+function callbackStart(s, e) {
+    // ...
+    PageMethods.StartOperation();
+    // ...
+}
 ```
 
+## Files to Review
 
-<br>
-<p>Please refer to the following links to know more:<br><a href="http://msdn.microsoft.com/en-us/library/bb398998.aspx">Exposing Web Services to Client Script</a> <br><a href="http://stackoverflow.com/questions/9854006/how-to-call-webmethod">How to call WebMethod?</a></p>
-<p>This example extends the following one: <a href="https://www.devexpress.com/Support/Center/p/E918">How to display progress information about server-side callback processing</a>.</p>
-<p><strong>See also</strong><strong>:<br> </strong><a href="https://www.devexpress.com/Support/Center/p/E4656">How to track progress of server side processing on the client side (using HttpModule)</a><br><a href="https://www.devexpress.com/Support/Center/p/E4651">How to track progress of server side processing on the client side (using HttpHandler)</a><br><a href="https://www.devexpress.com/Support/Center/p/T518056">ASPxGridView - How to show a lengthy operation's progress and allow canceling such operations</a></p>
+* [BasePage.cs](./CS/App_Code/BasePage.cs) (VB: [BasePage.vb](./VB/App_Code/BasePage.vb))
+* [Operation.cs](./CS/App_Code/Operation.cs) (VB: [Operation.vb](./VB/App_Code/Operation.vb))
+* [Default.aspx](./CS/Default.aspx) (VB: [Default.aspx](./VB/Default.aspx))
+* [Default.aspx.cs](./CS/Default.aspx.cs) (VB: [Default.aspx.vb](./VB/Default.aspx.vb))
+* [jQuery.aspx](./CS/jQuery.aspx) (VB: [jQuery.aspx](./VB/jQuery.aspx))
+* [jQuery.aspx.cs](./CS/jQuery.aspx.cs) (VB: [jQuery.aspx.vb](./VB/jQuery.aspx.vb))
+* [ScriptManager.aspx](./CS/ScriptManager.aspx) (VB: [ScriptManager.aspx](./VB/ScriptManager.aspx))
+* [ScriptManager.aspx.cs](./CS/ScriptManager.aspx.cs) (VB: [ScriptManager.aspx.vb](./VB/ScriptManager.aspx.vb))
 
-<br/>
+## Documentation
 
+* [Hot to call WebMethods](https://stackoverflow.com/questions/9854006/how-to-call-webmethod)
+* [Expose Web Services to Client Script](https://learn.microsoft.com/en-us/previous-versions/aspnet/bb398998(v=vs.100)?redirectedfrom=MSDN)
 
+## More Examples
+
+* [How to display the progress of a server-side process on the client](https://github.com/DevExpress-Examples/how-to-display-progress-information-about-server-side-callback-processing-e918)
