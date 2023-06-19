@@ -3,7 +3,7 @@
 **[[Run Online]](https://codecentral.devexpress.com/t156786/)**
 <!-- run online end -->
 
-This example demonstrates how to use the [WebMethod](https://learn.microsoft.com/en-us/previous-versions/visualstudio/visual-studio-2008/byxd99hx(v=vs.90)?redirectedfrom=MSDN) attribute to get information about the current progress from the server and display in on the client without refreshing the whole page. To enable this functionality, use the *jQuery library* or *ScriptManager* pages.
+This example demonstrates how to use the [WebMethod](https://learn.microsoft.com/en-us/previous-versions/visualstudio/visual-studio-2008/byxd99hx(v=vs.90)?redirectedfrom=MSDN) attribute to get information about the current progress from the server and display it on the client without refreshing the whole page. To enable this functionality, use the *jQuery library* or *ScriptManager* page.
 
 ![Use WebMethods to display the server-side process](WebMethodToTrackProgress.png)
 
@@ -15,7 +15,7 @@ Add the WebMethods attribute to the **BasePage** class as follows:
 [WebMethod(EnableSession = true)]
 ```
 
-For the jQuery approach, sent a `POST` request to the WebMethod:
+For the jQuery approach, send a `POST` request to the WebMethod:
 
 ```js
 function WebMethodRequest(url, callback) {
@@ -28,7 +28,7 @@ function WebMethodRequest(url, callback) {
 }
 ```
 
-For the ScriptManager approach, call the `StartOperation` method:
+For the ScriptManager technique, call the `StartOperation` method:
 
 ```js
 function callbackStart(s, e) {
@@ -51,7 +51,7 @@ function callbackStart(s, e) {
 
 ## Documentation
 
-* [Hot to call WebMethods](https://stackoverflow.com/questions/9854006/how-to-call-webmethod)
+* [How to call WebMethod?](https://stackoverflow.com/questions/9854006/how-to-call-webmethod)
 * [Expose Web Services to Client Script](https://learn.microsoft.com/en-us/previous-versions/aspnet/bb398998(v=vs.100)?redirectedfrom=MSDN)
 
 ## More Examples
