@@ -4,9 +4,6 @@
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
 # Progress Bar for ASP.NET Web Forms - How to use the WebMethod attribute to display the progress of a server-side process on the client
-<!-- run online -->
-**[[Run Online]](https://codecentral.devexpress.com/128565372/)**
-<!-- run online end -->
 
 This example demonstrates how to use the [WebMethod](https://learn.microsoft.com/en-us/previous-versions/visualstudio/visual-studio-2008/byxd99hx(v=vs.90)?redirectedfrom=MSDN) attribute to get information about the current progress from the server and display it on the client without refreshing the whole page. To enable this functionality, use the *jQuery library* or *ScriptManager* page.
 
